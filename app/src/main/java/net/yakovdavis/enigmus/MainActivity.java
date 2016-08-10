@@ -12,8 +12,11 @@ import android.preference.*;
 
 public class MainActivity extends Activity 
 {
-	private Encrypter e;
-	private static SharedPreferences mPref;
+	private Encrypter e;//object for encrypter
+	
+	private static SharedPreferences mPref;//preference holder
+	
+	//For static methods
 	private static EditText keyET;
 	private static EditText ioET;
 	private static CheckBox hideKeyCB;
@@ -25,6 +28,7 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 		
+		//Setting up variables
 		e = new Encrypter();
 		mPref = PreferenceManager.getDefaultSharedPreferences(this);
 		
@@ -33,24 +37,13 @@ public class MainActivity extends Activity
 		hideKeyCB = (CheckBox) findViewById(R.id.hideCheckbox);
 		keyTV = (TextView) findViewById(R.id.keyTextView);
 		
-		updatePrefs();
+		updatePrefs();//Retrieving preferences for symbol tables, fixed keys etc.
 		
+		//Setting up action bar to display share button and overlay
 		ActionBar actionBar = getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.WHITE));     
         actionBar.show();
     }
-
-	@Override
-	protected void onPause()
-	{
-		super.onPause();
-	}
-	
-	@Override
-    protected void onResume()
-    {
-		super.onResume();
-	}
 	
 	private void updatePrefs()
 	{
@@ -83,14 +76,18 @@ public class MainActivity extends Activity
 	@Override
     public boolean onCreateOptionsMenu(Menu menu)
 	{
+		//Link to xml layout for the overlay
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 	
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		//Overlay handling
 		switch (item.getItemId()) {
 			case R.id.action_settings:
+				//Open settings
 				Intent settingsActivity = new Intent(this, SettingsActivity.class);
 				startActivity(settingsActivity);
 				return true;
@@ -100,6 +97,7 @@ public class MainActivity extends Activity
 				return true;
 			
 			case R.id.action_send:
+				//Sharing is done here
 				if(ioET.getText().toString().equals(""))
 					return true;
 				Intent sendIntent = new Intent();
@@ -112,6 +110,7 @@ public class MainActivity extends Activity
 		return false;
 	}
 	
+	//Handling buttons next
 	public void onEncryptButtonClick(View view)
 		{
 			if((ioET.getText().toString() != "")||(keyET.getText().toString() != ""))
