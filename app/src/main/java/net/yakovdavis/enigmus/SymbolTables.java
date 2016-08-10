@@ -1,5 +1,7 @@
 package net.yakovdavis.enigmus;
 
+//Class with constants for custom symbol tables
+
 public abstract class SymbolTables
 {
 	private static final String BASIC_TEMP = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!?@#$%^&*()_-=+[]{}/\'`№АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя ";
