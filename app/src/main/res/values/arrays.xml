@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="symbol_tables">
+        <item>Unicode</item>
+        <item>Basic</item>
+        <item>Hand-Writing</item>
+        <item>Extended</item>
+    </string-array>
+	<string-array name="symbol_tables_values">
+        <item>unicode</item>
+        <item>basic</item>
+        <item>hand_writing</item>
+        <item>extended</item>
+    </string-array>
+</resources>

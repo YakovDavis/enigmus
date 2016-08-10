@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Enigmus</string>
+    <string name="encrypt">Encrypt</string>
+	<string name="decrypt">Decrypt</string>
+	<string name="hide_key">Hide key</string>
+	<string name="io">I/O</string>
+	<string name="key">Key</string>
+	<string name="io_hint">Input text here</string>
+	<string name="key_hint">Input key here</string>
+	<string name="settings">Settings</string>
+	<string name="exit">Exit</string>
+	<string name="symbol_table">Symbol table</string>
+	<string name="symbol_table_description">Symbol table for encryption</string>
+	<string name="encryption">Encryption</string>
+	<string name="fixed_key">Fixed key</string>
+	<string name="use_fixed_key">Use fixed key</string>
+	<string name="use_fixed_key_description">Use pre-set key for encryption</string>
+	<string name="set_key">Set key</string>
+	<string name="set_key_description">Enter a key to use</string>
+	<string name="send">Share</string>
+
+</resources>
