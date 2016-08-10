@@ -1,5 +1,12 @@
 package net.yakovdavis.enigmus;
 
+/*
+Main encryption class
+
+Only should exist in one instance, because of how symbol tables
+switching works
+*/
+
 public class Encrypter
 {
 	private static String symbolTable = "";
@@ -7,6 +14,8 @@ public class Encrypter
 	
 	public static void setSymbolTable(String name)
 	{
+		//Static method for switching symbol tables, unicode default
+		
 		switch(name)
 		{
 			case("basic"):
@@ -30,10 +39,13 @@ public class Encrypter
 	
 	public String encrypt(String str, String k)
 		{
-			KeyString key = new KeyString(k);
-			String res = "";
+			//Encryption method
 			
-			for(int i = 0; i < str.length(); i++)
+			KeyString key = new KeyString(k);//initializing object for easy key operations
+			String res = "";//for result
+			
+			
+			for(int i = 0; i < str.length(); i++)//main work loop
 			{
 				int tmp = getCharCode(str.charAt(i)) + getCharCode(key.getNextChar());
 				if(tmp >= ALPHABET_LENGTH)
@@ -46,10 +58,12 @@ public class Encrypter
 	
 	public String decrypt(String str, String k)
 	{
-		KeyString key = new KeyString(k);
-		String res = "";
+		//Decryption method
+		
+		KeyString key = new KeyString(k);//initializing object for easy key operations
+		String res = "";//for result
 
-		for(int i = 0; i < str.length(); i++)
+		for(int i = 0; i < str.length(); i++)//main work loop
 		{
 			int tmp = getCharCode(str.charAt(i)) - getCharCode(key.getNextChar());
 			if(tmp < 0)
@@ -59,6 +73,8 @@ public class Encrypter
 
 		return res;
 	}
+	
+	//Methods for retrieving symbol codes and symbols from codes from specified tables
 	
 	private int getCharCode(char c)
 	{
@@ -78,6 +94,8 @@ public class Encrypter
 	
 	private class KeyString
 	{
+		//Sub-class for easy key operations
+		
 		private String key;
 		private int pos;
 		
