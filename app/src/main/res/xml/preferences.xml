@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+        android:title="@string/encryption"
+        android:key="pref_encryption_settings">
+  	 	 <ListPreference
+ 	      	android:key="pref_symbol_table"
+ 	      	android:title="@string/symbol_table"
+ 	      	android:dialogTitle="@string/symbol_table_description"
+			android:summary=""
+   	    	android:entries="@array/symbol_tables"
+        	android:entryValues="@array/symbol_tables_values"
+        	android:defaultValue="unicode" />
+	</PreferenceCategory>
+	<PreferenceCategory
+        android:title="@string/fixed_key"
+        android:key="pref_fixed_key_settings">
+		<CheckBoxPreference
+ 	      	android:key="pref_use_fixed_key"
+ 	      	android:title="@string/use_fixed_key"
+			android:summary="@string/use_fixed_key_description"
+			android:defaultValue="false"/>
+		<EditTextPreference
+			android:key="pref_fixed_key"
+			android:dependency="pref_use_fixed_key"
+			android:inputType="textPassword"
+			android:title="@string/set_key"
+			android:summary="@string/set_key_description"
+			android:defaultValue="key"/>
+	</PreferenceCategory>
+</PreferenceScreen>
