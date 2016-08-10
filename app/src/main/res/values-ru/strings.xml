@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Enigmus</string>
+    <string name="encrypt">Зашифровать</string>
+	<string name="decrypt">Расшифровать</string>
+	<string name="hide_key">Скрыть ключ</string>
+	<string name="io">Ввод/Вывод</string>
+	<string name="key">Ключ</string>
+	<string name="io_hint">Введите текст</string>
+	<string name="key_hint">Введите ключ</string>
+	<string name="settings">Настройки</string>
+	<string name="exit">Выход</string>
+	<string name="symbol_table">Таблица символов</string>
+	<string name="symbol_table_description">Таблица символов для шифрования</string>
+	<string name="encryption">Шифрование</string>
+	<string name="fixed_key">Фиксированный ключ</string>
+	<string name="use_fixed_key">Использовать фиксированный ключ</string>
+	<string name="use_fixed_key_description">Использовать предустановленный ключ для шифрования</string>
+	<string name="set_key">Установить ключ</string>
+	<string name="set_key_description">Установить ключ для шифрования</string>
+	<string name="send">Поделиться</string>
+
+</resources>
