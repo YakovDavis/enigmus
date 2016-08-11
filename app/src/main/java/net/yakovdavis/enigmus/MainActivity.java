@@ -75,8 +75,8 @@ public class MainActivity extends Activity
 	
 	@Override
     public boolean onCreateOptionsMenu(Menu menu)
-	{
-		//Link to xml layout for the overlay
+    {
+	//Link to xml layout for the overlay
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -85,7 +85,8 @@ public class MainActivity extends Activity
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		//Overlay handling
-		switch (item.getItemId()) {
+		switch (item.getItemId())
+                {
 			case R.id.action_settings:
 				//Open settings
 				Intent settingsActivity = new Intent(this, SettingsActivity.class);
@@ -112,12 +113,12 @@ public class MainActivity extends Activity
 	
 	//Handling buttons next
 	public void onEncryptButtonClick(View view)
+	{
+		if((ioET.getText().toString() != "")||(keyET.getText().toString() != ""))
 		{
-			if((ioET.getText().toString() != "")||(keyET.getText().toString() != ""))
-			{
-				ioET.setText(e.encrypt(ioET.getText().toString(), keyET.getText().toString()));
-			}
+			ioET.setText(e.encrypt(ioET.getText().toString(), keyET.getText().toString()));
 		}
+	}
 	
 	public void onDecryptButtonClick(View view)
 	{
