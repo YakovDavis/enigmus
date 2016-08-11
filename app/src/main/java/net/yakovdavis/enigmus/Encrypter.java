@@ -38,23 +38,23 @@ public class Encrypter
 	}
 	
 	public String encrypt(String str, String k)
+	{
+		//Encryption method
+		
+		KeyString key = new KeyString(k);//initializing object for easy key operations
+		String res = "";//for result
+		
+			
+		for(int i = 0; i < str.length(); i++)//main work loop
 		{
-			//Encryption method
-			
-			KeyString key = new KeyString(k);//initializing object for easy key operations
-			String res = "";//for result
-			
-			
-			for(int i = 0; i < str.length(); i++)//main work loop
-			{
-				int tmp = getCharCode(str.charAt(i)) + getCharCode(key.getNextChar());
-				if(tmp >= ALPHABET_LENGTH)
-					tmp = tmp - ALPHABET_LENGTH;
-				res = res + getCharFromCode(tmp);
-			}
-			
-			return res;
+			int tmp = getCharCode(str.charAt(i)) + getCharCode(key.getNextChar());
+			if(tmp >= ALPHABET_LENGTH)
+				tmp = tmp - ALPHABET_LENGTH;
+			res = res + getCharFromCode(tmp);
 		}
+		
+		return res;
+	}
 	
 	public String decrypt(String str, String k)
 	{
@@ -106,13 +106,13 @@ public class Encrypter
 		}
 		
 		public char getNextChar()
+		{
+			if(pos == key.length())
 			{
-				if(pos == key.length())
-				{
-					pos = 0;
-				}
-				pos++;
-				return key.charAt(pos - 1);
+				pos = 0;
 			}
+			pos++;
+			return key.charAt(pos - 1);
+		}
 	}
 }
