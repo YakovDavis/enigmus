@@ -13,16 +13,16 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
-	{
+    {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
-		
-		//update of the symbol tables selection summary
-		ListPreference sTable = (ListPreference)findPreference("pref_symbol_table");
-		sTable.setSummary(sTable.getEntry());
-		
-		//Setting up action bar
-		ActionBar actionBar = getActionBar();
+	
+	//update of the symbol tables selection summary
+	ListPreference sTable = (ListPreference)findPreference("pref_symbol_table");
+	sTable.setSummary(sTable.getEntry());
+	
+	//Setting up action bar
+	ActionBar actionBar = getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.WHITE));     
         actionBar.show();
     }
@@ -46,12 +46,12 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
 	{
 		//Handling preferences change
-        if (key.equals("pref_symbol_table"))
+                if (key.equals("pref_symbol_table"))
 		{
-            ListPreference tablePref = (ListPreference)findPreference(key);
+                        ListPreference tablePref = (ListPreference)findPreference(key);
 			tablePref.setSummary(tablePref.getEntry());
-            Encrypter.setSymbolTable(tablePref.getValue());
-        }
+                        Encrypter.setSymbolTable(tablePref.getValue());
+                }
 		if (key.equals("pref_use_fixed_key"))
 		{
 			CheckBoxPreference uFKey = (CheckBoxPreference)findPreference(key);
